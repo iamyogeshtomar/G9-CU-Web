@@ -19,8 +19,15 @@ function addListItem(e) {
 
 function removeListItem() {
   // remove item from the <ul>
+  this.parentElement.remove();
 }
 
 const submitForm = document.getElementById("submitForm");
 
 submitForm.addEventListener("click", addListItem);
+
+const deletebtn = document.querySelectorAll(".delete");
+
+deletebtn.forEach((element) => {
+  element.addEventListener("click", removeListItem);
+});
